@@ -156,7 +156,7 @@ $RECYCLE.BIN/
 .DS_Store
 
 packages/
-發行/
+Publish/
 *.DotSettings
 *.opendb
 Bililive_dm.VC.db
