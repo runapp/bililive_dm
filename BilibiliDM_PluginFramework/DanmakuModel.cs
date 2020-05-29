@@ -12,32 +12,32 @@ namespace BilibiliDM_PluginFramework
     public enum MsgTypeEnum
     {
         /// <summary>
-        /// 彈幕
+        /// 弹幕
         /// </summary>
         Comment,
 
         /// <summary>
-        /// 禮物
+        /// 礼物
         /// </summary>
         GiftSend,
 
         /// <summary>
-        /// 禮物排名
+        /// 礼物排名
         /// </summary>
         GiftTop,
 
         /// <summary>
-        /// 歡迎老爷
+        /// 欢迎老爷
         /// </summary>
         Welcome,
 
         /// <summary>
-        /// 直播開始
+        /// 直播开始
         /// </summary>
         LiveStart,
 
         /// <summary>
-        /// 直播結束
+        /// 直播结束
         /// </summary>
         LiveEnd,
 
@@ -97,7 +97,7 @@ namespace BilibiliDM_PluginFramework
     public class DanmakuModel
     {
         /// <summary>
-        /// 消息類型
+        /// 消息类型
         /// </summary>
         public MsgTypeEnum MsgType { get; set; }
 
@@ -105,7 +105,7 @@ namespace BilibiliDM_PluginFramework
 
 
         /// <summary>
-        /// 彈幕內容
+        /// 弹幕内容
         /// <para>此项有值的消息类型：<list type="bullet">
         /// <item><see cref="MsgTypeEnum.Comment"/></item>
         /// </list></para>
@@ -113,7 +113,7 @@ namespace BilibiliDM_PluginFramework
         public string CommentText { get; set; }
 
         /// <summary>
-        /// 彈幕用戶
+        /// 弹幕用户
         /// </summary>
         [Obsolete("请使用 UserName", true)]
         public string CommentUser
@@ -160,7 +160,7 @@ namespace BilibiliDM_PluginFramework
         public int UserGuardLevel { get; set; }
 
         /// <summary>
-        /// 禮物用戶
+        /// 礼物用户
         /// </summary>
         [Obsolete("请使用 UserName", true)]
         public string GiftUser
@@ -170,12 +170,12 @@ namespace BilibiliDM_PluginFramework
         }
 
         /// <summary>
-        /// 禮物名稱
+        /// 礼物名称
         /// </summary>
         public string GiftName { get; set; }
 
         /// <summary>
-        /// 禮物數量
+        /// 礼物数量
         /// </summary>
         [Obsolete("请使用 GiftCount", true)]
         public string GiftNum
@@ -205,7 +205,7 @@ namespace BilibiliDM_PluginFramework
         }
 
         /// <summary>
-        /// 禮物排行
+        /// 礼物排行
         /// <para>此项有值的消息类型：<list type="bullet">
         /// <item><see cref="MsgTypeEnum.GiftTop"/></item>
         /// </list></para>
@@ -222,7 +222,7 @@ namespace BilibiliDM_PluginFramework
         public bool isAdmin { get; set; }
 
         /// <summary>
-        /// 是否VIP用戶(老爺)
+        /// 是否VIP用户(老爷)
         /// <para>此项有值的消息类型：<list type="bullet">
         /// <item><see cref="MsgTypeEnum.Comment"/></item>
         /// <item><see cref="MsgTypeEnum.Welcome"/></item>

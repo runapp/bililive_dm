@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace Bililive_dm
 {
     /// <summary>
-    /// DanmakuTextControl.xaml 的互動邏輯
+    /// DanmakuTextControl.xaml 的交互逻辑
     /// </summary>
     public partial class DanmakuTextControl : UserControl
     {

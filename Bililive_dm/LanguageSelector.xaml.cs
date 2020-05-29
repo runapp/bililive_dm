@@ -25,17 +25,14 @@ namespace Bililive_dm
 
             switch (Properties.Settings.Default.lang)
             {
-                case "ja-JP":
-                    this.jp.IsChecked = true;
-                    break;
                 case "zh":
-                    default:
+                default:
                     this.cn.IsChecked = true;
                     break;
 
             }
 
-            
+
 
         }
 
@@ -45,12 +42,8 @@ namespace Bililive_dm
             {
                 Properties.Settings.Default.lang = "zh";
             }
-            else if (this.jp.IsChecked==true)
-            {
-                Properties.Settings.Default.lang = "ja-JP";
-            }
             Properties.Settings.Default.Save();
-            MessageBox.Show(this,"语言设定将在重启弹幕姬后生效. (日語版放在這裡)");
+            MessageBox.Show(this, "语言设定将在重启弹幕姬后生效.");
             this.Close();
 
         }

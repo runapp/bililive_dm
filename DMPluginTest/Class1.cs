@@ -53,7 +53,7 @@ namespace DMPluginTest
         public override void Stop()
         {
             base.Stop();
-            //請勿使用任何阻塞方法
+            //请勿使用任何阻塞方法
             Console.WriteLine("Plugin Stoped!");
             this.Log("BBB");
         }
@@ -61,7 +61,7 @@ namespace DMPluginTest
         public override void Start()
         {
             base.Start();
-            //請勿使用任何阻塞方法
+            //请勿使用任何阻塞方法
             Console.WriteLine("Plugin Started!");
             this.Log("BBB");
         }

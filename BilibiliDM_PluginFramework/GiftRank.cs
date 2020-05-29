@@ -10,7 +10,7 @@ namespace BilibiliDM_PluginFramework
         private decimal _coin;
         private int _uid;
         /// <summary>
-        /// 用戶名
+        /// 用户名
         /// </summary>
         public string UserName
         {
@@ -23,7 +23,7 @@ namespace BilibiliDM_PluginFramework
             }
         }
         /// <summary>
-        /// 花銷
+        /// 花销
         /// </summary>
         public decimal coin
         {

@@ -41,7 +41,7 @@ namespace Bililive_dm
         }
     }
     /// <summary>
-    /// OptionDialog.xaml 的互動邏輯
+    /// OptionDialog.xaml 的交互逻辑
     /// </summary>
     public partial class OptionDialog 
     {

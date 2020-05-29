@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 namespace Bililive_dm
 {
     /// <summary>
-    /// FullScreenDanmaku.xaml 的互動邏輯
+    /// FullScreenDanmaku.xaml 的交互逻辑
     /// </summary>
     public partial class FullScreenDanmaku : UserControl
     {
