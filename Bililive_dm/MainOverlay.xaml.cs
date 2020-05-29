@@ -9,7 +9,7 @@ namespace Bililive_dm
     using static WINAPI.USER32;
 
     /// <summary>
-    /// MainOverlay.xaml 的互動邏輯
+    /// MainOverlay.xaml 的交互逻辑
     /// </summary>
     public partial class MainOverlay : Window
     {
@@ -17,7 +17,6 @@ namespace Bililive_dm
         {
             this.InitializeComponent();
             this.Topmost = true;
-            // 在此點下方插入建立物件所需的程式碼。
         }
 
 

@@ -3,10 +3,9 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// 組件的一般資訊是由下列的屬性集控制。
-// 變更這些屬性的值即可修改組件的相關
-// 資訊。
-
+// 有关程序集的一般信息由以下
+// 控制。更改这些特性值可修改
+// 与程序集关联的信息。
 [assembly: AssemblyTitle("BiliDMLib")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
@@ -16,27 +15,21 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-// 將 ComVisible 設定為 false 會使得這個組件中的型別
-// 對 COM 元件而言為不可見。如果您需要從 COM 存取這個組件中
-// 的型別，請在該型別上將 ComVisible 屬性設定為 true。
-
+//将 ComVisible 设置为 false 将使此程序集中的类型
+//对 COM 组件不可见。  如果需要从 COM 访问此程序集中的类型，
+//请将此类型的 ComVisible 特性设置为 true。
 [assembly: CLSCompliant(false)]
 [assembly: ComVisible(false)]
 
-// 下列 GUID 為專案公開 (Expose) 至 COM 時所要使用的 typelib ID
-
+// 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
 [assembly: Guid("4024b754-da6f-44f7-a9cf-144038213bc9")]
 
-// 組件的版本資訊是由下列四項值構成:
+// 程序集的版本信息由下列四个值组成: 
 //
-//      主要版本
-//      次要版本 
-//      組建編號
-//      修訂編號
+//      主版本
+//      次版本
+//      生成号
+//      修订号
 //
-// 您可以指定所有的值，也可以依照以下的方式，使用 '*' 將組建和修訂編號
-// 指定為預設值:
-// [assembly: AssemblyVersion("1.0.*")]
-
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]

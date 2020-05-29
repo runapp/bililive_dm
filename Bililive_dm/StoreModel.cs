@@ -226,13 +226,13 @@ namespace Bililive_dm
         private double _mainOverlayYoffset;
         private double _mainOverlayWidth;
         private double _mainOverlayEffect1; //拉伸
-        private double _mainOverlayEffect2; //文字出現
-        private double _mainOverlayEffect3; //文字停留
+        private double _mainOverlayEffect2; //文本出现
+        private double _mainOverlayEffect3; //文本停留
         private double _mainOverlayEffect4; //窗口消失
         private double _mainOverlayFontsize;
 
 
-        private double _fullOverlayEffect1; //文字速度
+        private double _fullOverlayEffect1; //文本速度
         private double _fullOverlayFontsize;
         private double _mainOverlayXoffset;
         private bool _wtfEngineEnabled;

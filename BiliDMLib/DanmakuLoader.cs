@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
@@ -23,7 +23,7 @@ namespace BiliDMLib
     {
         private string[] defaulthosts = new string[] {"livecmt-2.bilibili.com", "livecmt-1.bilibili.com"};
         private string ChatHost = "chat.bilibili.com";
-        private int ChatPort = 2243; // TCPĞ­ÒéÄ¬ÈÏ¶Ë¿ÚÒÉËÆĞŞ¸Äµ½ 2243
+        private int ChatPort = 2243; // TCPåè®®é»˜è®¤ç«¯å£ç–‘ä¼¼ä¿®æ”¹åˆ° 2243
         private TcpClient Client;
         private Stream NetStream;
         private string CIDInfoUrl = "https://api.live.bilibili.com/room/v1/Danmu/getConf?room_id=";
@@ -38,7 +38,7 @@ namespace BiliDMLib
         private static int lastroomid ;
         private static string lastserver;
         private static HttpClient httpClient=new HttpClient(){Timeout = TimeSpan.FromSeconds(5)};
-//        private object shit_lock=new object();//ReceiveMessageLoop ËÆºõºÃÏñ´ó¸Å•şÍ¬•rß\ĞĞƒÉ‚€µÄbug, µ«ÊÇ²»ĞŞÁË, æiÉÏËãÁË
+//        private object shit_lock=new object();//ReceiveMessageLoop ä¼¼ä¹å¥½åƒå¤§æ¦‚ä¼šåŒæ—¶è¿è¡Œä¸¤ä¸ªçš„bug, ä½†æ˜¯ä¸ä¿®äº†, é”ä¸Šç®—äº†
 
         public async Task<bool> ConnectAsync(int roomId)
         {
@@ -83,22 +83,22 @@ namespace BiliDMLib
                         var errorResponse = ex.Response as HttpWebResponse;
                         if (errorResponse.StatusCode == HttpStatusCode.NotFound)
                         {
-                            // Ö±²¥¼ä²»´æÔÚ£¨HTTP 404£©
-                            var msg = "¸ÃÖ±²¥¼äÒÉËÆ²»´æÔÚ£¬µ¯Ä»¼§Ö»Ö§³ÖÊ¹ÓÃÔ­·¿¼äºÅÁ¬½Ó";
+                            // ç›´æ’­é—´ä¸å­˜åœ¨ï¼ˆHTTP 404ï¼‰
+                            var msg = "è¯¥ç›´æ’­é—´ç–‘ä¼¼ä¸å­˜åœ¨ï¼Œå¼¹å¹•å§¬åªæ”¯æŒä½¿ç”¨åŸæˆ¿é—´å·è¿æ¥";
                             LogMessage?.Invoke(this, new LogMessageArgs() {message = msg});
                         }
                         else
                         {
-                            // BÕ¾·şÎñÆ÷ÏìÓ¦´íÎó
-                            var msg = "BÕ¾·şÎñÆ÷ÏìÓ¦µ¯Ä»·şÎñÆ÷µØÖ·³ö´í£¬³¢ÊÔÊ¹ÓÃ³£¼ûµØÖ·Á¬½Ó";
+                            // Bç«™æœåŠ¡å™¨å“åº”é”™è¯¯
+                            var msg = "Bç«™æœåŠ¡å™¨å“åº”å¼¹å¹•æœåŠ¡å™¨åœ°å€å‡ºé”™ï¼Œå°è¯•ä½¿ç”¨å¸¸è§åœ°å€è¿æ¥";
                             LogMessage?.Invoke(this, new LogMessageArgs() {message = msg});
                         }
                     }
                     catch (Exception)
                     {
-                        // ÆäËû´íÎó£¨XML½âÎö´íÎó£¿£©
+                        // å…¶ä»–é”™è¯¯ï¼ˆXMLè§£æé”™è¯¯ï¼Ÿï¼‰
                         ChatHost = defaulthosts[new Random().Next(defaulthosts.Length)];
-                        var msg = "»ñÈ¡µ¯Ä»·şÎñÆ÷µØÖ·Ê±³öÏÖÎ´Öª´íÎó£¬³¢ÊÔÊ¹ÓÃ³£¼ûµØÖ·Á¬½Ó";
+                        var msg = "è·å–å¼¹å¹•æœåŠ¡å™¨åœ°å€æ—¶å‡ºç°æœªçŸ¥é”™è¯¯ï¼Œå°è¯•ä½¿ç”¨å¸¸è§åœ°å€è¿æ¥";
                         LogMessage?.Invoke(this, new LogMessageArgs() {message = msg});
                     }
 
@@ -149,18 +149,18 @@ namespace BiliDMLib
                     var protocol=DanmakuProtocol.FromBuffer(stableBuffer);
                     if (protocol.PacketLength < 16)
                     {
-                        throw new NotSupportedException("Ğ­ÒéÊ§°Ü: (L:" + protocol.PacketLength + ")");
+                        throw new NotSupportedException("åè®®å¤±è´¥: (L:" + protocol.PacketLength + ")");
                     }
                     var payloadlength = protocol.PacketLength - 16;
                     if (payloadlength == 0)
                     {
-                        continue; // Ã»ÓĞÄÚÈİÁË
+                        continue; // æ²¡æœ‰å†…å®¹äº†
                     }
                     
                     buffer = new byte[payloadlength];
                     
                     await NetStream.ReadBAsync(buffer, 0, payloadlength);
-                    if (protocol.Version == 2 && protocol.Action == 5) // ´¦ÀídeflateÏûÏ¢
+                    if (protocol.Version == 2 && protocol.Action == 5) // å¤„ç†deflateæ¶ˆæ¯
                     {
                         using (var ms = new MemoryStream(buffer, 2, payloadlength - 2)) // Skip 0x78 0xDA
                         using (var deflate = new DeflateStream(ms, CompressionMode.Decompress))
@@ -214,7 +214,7 @@ namespace BiliDMLib
             {
                 case 3: // (OpHeartbeatReply)
                     {
-                        var viewer = EndianBitConverter.BigEndian.ToUInt32(buffer, 0); //¹ÛÖÚÈËÊı
+                        var viewer = EndianBitConverter.BigEndian.ToUInt32(buffer, 0); //è§‚ä¼—äººæ•°
                         // Console.WriteLine(viewer);
                         ReceivedRoomCount?.Invoke(this, new ReceivedRoomCountArgs() { UserCount = viewer });
                         break;
@@ -373,23 +373,23 @@ namespace BiliDMLib
     public struct DanmakuProtocol
     {
         /// <summary>
-        /// ÏûÏ¢×Ü³¤¶È (Ğ­ÒéÍ· + Êı¾İ³¤¶È)
+        /// æ¶ˆæ¯æ€»é•¿åº¦ (åè®®å¤´ + æ•°æ®é•¿åº¦)
         /// </summary>
         public int PacketLength;
         /// <summary>
-        /// ÏûÏ¢Í·³¤¶È (¹Ì¶¨Îª16[sizeof(DanmakuProtocol)])
+        /// æ¶ˆæ¯å¤´é•¿åº¦ (å›ºå®šä¸º16[sizeof(DanmakuProtocol)])
         /// </summary>
         public short HeaderLength;
         /// <summary>
-        /// ÏûÏ¢°æ±¾ºÅ
+        /// æ¶ˆæ¯ç‰ˆæœ¬å·
         /// </summary>
         public short Version;
         /// <summary>
-        /// ÏûÏ¢ÀàĞÍ
+        /// æ¶ˆæ¯ç±»å‹
         /// </summary>
         public int Action;
         /// <summary>
-        /// ²ÎÊı, ¹Ì¶¨Îª1
+        /// å‚æ•°, å›ºå®šä¸º1
         /// </summary>
         public int Parameter;
 

@@ -22,7 +22,7 @@ namespace Bililive_dm
     using static WINAPI.USER32;
 
     /// <summary>
-    /// WpfDanmakuOverlay.xaml 的互動邏輯
+    /// WpfDanmakuOverlay.xaml 的交互逻辑
     /// </summary>
     public partial class WpfDanmakuOverlay : Window, IDanmakuWindow
     {
